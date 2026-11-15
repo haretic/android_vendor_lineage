@@ -35,6 +35,11 @@ ifneq ($(TARGET_BOOTANIMATION),)
 $(call soong_config_set,lineage_bootanimation,prebuilt_file,$(TARGET_BOOTANIMATION))
 endif
 
+# Fonts
+ifneq ($(TARGET_FONTS_CUSTOMIZATION_MODULE),)
+$(call soong_config_set,lineage_fonts,customization_module,$(TARGET_FONTS_CUSTOMIZATION_MODULE))
+endif
+
 # Charger
 lineage_charger_density := mdpi
 ifneq (,$(TARGET_SCREEN_DENSITY))
